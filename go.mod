@@ -14,6 +14,7 @@ require (
 	github.com/fatih/color v1.10.0
 	github.com/flynn-archive/go-shlex v0.0.0-20150515145356-3f9db97f8568 // indirect
 	github.com/gabriel-vasile/mimetype v1.1.2 // indirect
+	github.com/jaypipes/ghw v0.7.0
 	github.com/kr/text v0.2.0 // indirect
 	github.com/lu4p/binclude v0.0.0-20210217002309-f5cbd98bb200
 	github.com/lu4p/cat v0.1.5

