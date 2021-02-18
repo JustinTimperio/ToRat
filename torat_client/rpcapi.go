@@ -138,10 +138,13 @@ func (a *API) GetHardware(v shared.Void, r *shared.Hardware) error {
 	r.Cores = cpu.TotalThreads
 	r.RAM = memory.String()
 	r.Drives = block.String()
-	r.GPU = gpu.String()
 
 	for _, proc := range cpu.Processors {
-		r.CPU = proc.Vendor + proc.Model
+		r.CPU = proc.Model
+	}
+
+	for _, vc := range gpu.GraphicsCards {
+		r.GPU = vc.DeviceInfo.Product.Name
 	}
 
 	return nil

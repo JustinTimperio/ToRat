@@ -251,21 +251,22 @@ func (client *activeClient) Hardware(c *ishell.Context) {
 	c.ProgressBar().Start()
 	r := shared.Hardware{}
 
-	if err := client.RPC.Call("API.Hardware", void, &r); err != nil {
+	if err := client.RPC.Call("API.GetHardware", void, &r); err != nil {
 		c.ProgressBar().Final(yellow("["+client.Client.Name+"] ") + red("[!] Could not collect information on client hardware!"))
 		c.ProgressBar().Final(yellow("["+client.Client.Name+"] ") + red("[!] ", err))
+		c.ProgressBar().Stop()
 		return
 	}
 
 	c.ProgressBar().Final(yellow("["+client.Client.Name+"] ") + green("[+] Hardware collection finished"))
 	c.ProgressBar().Stop()
 
-	c.Println(green("OS:			"), r.OS)
-	c.Println(green("CPU:			"), r.CPU)
-	c.Println(green("CORES:		"), r.Cores)
-	c.Println(green("RAM:			"), r.RAM)
-	c.Println(green("GPU:			"), r.GPU)
-	c.Println(green("Drives:  "), r.Drives)
+	c.Println(green("OS:     "), r.OS)
+	c.Println(green("CPU:    "), r.CPU)
+	c.Println(green("CORES:  "), r.Cores)
+	c.Println(green("RAM:    "), r.RAM)
+	c.Println(green("GPU:    "), r.GPU)
+	c.Println(green("Drives: "), r.Drives)
 	return
 }
 
