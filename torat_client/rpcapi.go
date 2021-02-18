@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	"net/http"
 	"net/rpc"
 	"os"
 	"path/filepath"
@@ -127,11 +126,9 @@ func (a *API) Cd(path string, r *shared.Dir) (err error) {
 	return err
 }
 
-//
 // Hardware Survey Section
-//
-
 func (a *API) GetHardware(v shared.Void, r *shared.Hardware) error {
+	// We don't care about any errors
 	cpu, _ := ghw.CPU()
 	memory, _ := ghw.Memory()
 	block, _ := ghw.Block()
@@ -147,22 +144,6 @@ func (a *API) GetHardware(v shared.Void, r *shared.Hardware) error {
 		r.CPU = proc.Vendor + proc.Model
 	}
 
-	return nil
-}
-
-func (a *API) GetIP(v shared.Void, r *string) error {
-	url := "https://api.ipify.org?format=text"
-	resp, err := http.Get(url)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-	ip, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
-
-	*r = string(ip)
 	return nil
 }
 
