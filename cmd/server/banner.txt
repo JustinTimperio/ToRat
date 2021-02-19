@@ -1,3 +1,5 @@
+{{.AnsiColor.BrightBlue}}
+Welcome to
 {{.AnsiColor.BrightRed}}
 
 TTTTTTTTTTTTTTTTTTTTTTT              RRRRRRRRRRRRRRRRR                             tttt
@@ -17,9 +19,6 @@ TTTTTT  T:::::T  TTTTTTooooooooooo     R::::R     R:::::R  aaaaaaaaaaaaa  tttttt
       T:::::::::T    oo:::::::::::oo R::::::R     R:::::R a::::::::::aa:::a       tt:::::::::::tt
       TTTTTTTTTTT      ooooooooooo   RRRRRRRR     RRRRRRR  aaaaaaaaaa  aaaa         ttttttttttt
 
-{{.AnsiColor.BrightBlue}}
-Created by:
-          https://github.com/lu4p
-          https://github.com/JustinTimperio
+Created by https://github.com/lu4p/
 
 {{ .AnsiColor.Default }}

