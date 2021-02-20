@@ -16,6 +16,7 @@ var (
 	_ = reflect.TypeOf(Dir{})
 	_ = reflect.TypeOf(EncAsym{})
 	_ = reflect.TypeOf(Hardware{})
+	_ = reflect.TypeOf(Speedtest{})
 )
 
 type Void int
@@ -54,4 +55,12 @@ type Hardware struct {
 	RAM    string
 	GPU    string
 	Drives string
+}
+
+type Speedtest struct {
+	IP       string
+	Ping     string
+	Download float64
+	Upload   float64
+	Country  string
 }
