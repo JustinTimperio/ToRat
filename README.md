@@ -1,7 +1,7 @@
-# <a href="https://github.com/lu4p/ToRat" target="_blank"> <img src="./ToRat_Logo.png" width="180px"></a>
-[![License](https://img.shields.io/github/license/lu4p/ToRat.svg)](https://unlicense.org/)
-[![CircleCI](https://circleci.com/gh/lu4p/ToRat.svg?style=svg)](https://circleci.com/gh/lu4p/ToRat)
-[![Go Report Card](https://goreportcard.com/badge/github.com/lu4p/ToRat)](https://goreportcard.com/report/github.com/lu4p/ToRat)
+# <a href="https://github.com/JustinTimperio/ToRat" target="_blank"> <img src="./ToRat_Logo.png" width="180px"></a>
+[![License](https://img.shields.io/github/license/JustinTimperio/ToRat.svg)](https://unlicense.org/)
+[![CircleCI](https://circleci.com/gh/JustinTimperio/ToRat.svg?style=svg)](https://circleci.com/gh/JustinTimperio/ToRat)
+[![Go Report Card](https://goreportcard.com/badge/github.com/JustinTimperio/ToRat)](https://goreportcard.com/report/github.com/JustinTimperio/ToRat)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/lu4p/torat)](https://hub.docker.com/repository/docker/lu4p/torat)
 
 A Cross Platform Remote Administration tool written in Go using Tor as its transport mechanism
@@ -11,7 +11,7 @@ currently supporting Windows, Linux, MacOS clients.
 USE FOR EDUCATIONAL PURPOSES ONLY
 
 ## Wiki
-[How to use ToRat Docker Image](https://github.com/lu4p/ToRat/wiki/How-to-use-the-ToRat-Docker-Image)
+[How to use ToRat Docker Image](https://github.com/JustinTimperio/ToRat/wiki/How-to-use-the-ToRat-Docker-Image)
 
 
 ## Preview

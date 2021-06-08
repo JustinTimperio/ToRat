@@ -6,7 +6,7 @@ import (
 
 	"github.com/JustinTimperio/gomap"
 	"github.com/labstack/echo/v4"
-	"github.com/lu4p/ToRat/shared"
+	"github.com/JustinTimperio/ToRat/shared"
 )
 
 func APIServer() {

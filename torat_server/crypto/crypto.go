@@ -11,7 +11,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/lu4p/ToRat/shared"
+	"github.com/JustinTimperio/ToRat/shared"
 )
 
 var privateKey = loadPrivateKey()

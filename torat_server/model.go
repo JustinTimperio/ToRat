@@ -3,7 +3,7 @@ package server
 import (
 	"net/rpc"
 
-	"github.com/lu4p/ToRat/shared"
+	"github.com/JustinTimperio/ToRat/shared"
 )
 
 type Client struct {
